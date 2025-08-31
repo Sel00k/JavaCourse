@@ -1,0 +1,17 @@
+car:a123me|Mercedes|White|0|8300000
+car:b873of|Volga|Black|0|673000
+car:w487mn|Lexus|Grey|76000|900000
+car:p987hj|Volga|Red|610|704340
+car:c987ss|Toyota|White|254000|761000
+car:o983op|Toyota|Black|698000|740000
+car:p146op|BMW|White|271000|850000
+car:u893ii|Toyota|Purple|210900|440000
+car:l097df|Toyota|Black|108000|780000
+car:y876wd|Toyota|Black|160000|1000000
+car:o983op|BMW|Red|133000|880000
+colorToFind:Black
+mileageToFind:0
+PriceToFind:700000-800000
+modelToFind:Toyota
+modelToFind:Volvo
+modelToFind:Volga
