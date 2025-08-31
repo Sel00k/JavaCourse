@@ -26,7 +26,7 @@ public class Task2 {
         System.out.printf( "Введите вторую строку > " );
         String t = scanner.nextLine();
 
-        System.out.println( stringAnagramm( s , t ) );
+        System.out.println( stringAnagramm( s.toLowerCase() , t.toLowerCase() ) );
     }
 
     public static boolean stringAnagramm( String s ,  String t )

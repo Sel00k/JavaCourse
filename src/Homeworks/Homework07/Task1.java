@@ -12,16 +12,16 @@ public class Task1 {
         System.out.println( "Hello, World!" );
     }
 
-    public static ArrayList<T> UniqueValue( ArrayList<T> t )
+    public static <T> ArrayList<T> UniqueValue( ArrayList<T> t )
     {
-        ArrayList<T> u = new ArrayList<T>();
-
-        for( ArrayList<T> a : t ) {
+        ArrayList<T> u = new ArrayList<>();
+/*
+        for( <T> a : t ) {
             if( !u.contains( a ) ) {
                 u.add( a );
             }
         }
-
+*/
         return u;
     }
 
