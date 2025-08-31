@@ -7,25 +7,19 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class ListDiscountProduct {
-    private ArrayList<DiscountProduct> list;
+    private ArrayList<DiscountProduct> discountlist;
+    private ArrayList<Product> list;
     private static LocalDate marketDate = LocalDate.now();;
 
     // Конструктор по умолчанию
     public ListDiscountProduct() {
         this.list = new ArrayList<>();
+        this.discountlist = new ArrayList<>();
     }
 
     public ListDiscountProduct( LocalDate date ) {
         this.list = new ArrayList<>();
-        this.marketDate = date;
-    }
-
-    public ListDiscountProduct( ArrayList<DiscountProduct> list ) {
-        this.list = list;
-    }
-
-    public ListDiscountProduct( ArrayList<DiscountProduct> list , LocalDate date ) {
-        this.list = list;
+        this.discountlist = new ArrayList<>();
         this.marketDate = date;
     }
 
@@ -91,7 +85,7 @@ public class ListDiscountProduct {
 
                         if ( x.length == 2 ) {
                             if( state ) {
-                                this.list.add( new DiscountProduct( nameProduct , priceProduct ) );
+                                this.list.add( new Product( nameProduct , priceProduct ) );
                                 productCount++;
                             }
                         } else {
@@ -116,7 +110,7 @@ public class ListDiscountProduct {
                             if( state ) {
                                 startDate = marketDate;
                                 endDate = startDate.plusDays( validityDays - 1 );;
-                                this.list.add( new DiscountProduct( nameProduct , priceProduct , discountPercentage , startDate , endDate ) );
+                                this.discountlist.add( new DiscountProduct( nameProduct , priceProduct , discountPercentage , startDate , endDate ) );
                                 productCount++;
                             }
 
@@ -142,7 +136,13 @@ public class ListDiscountProduct {
         String textStr , pattern = "dd.MM.yyyy" , strStartDate , strEndDate;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern( pattern );
 
-        for( DiscountProduct elemProduct : this.list ) {
+        for( Product elemProduct : this.list ) {
+            price = elemProduct.getPrice();
+            textStr = elemProduct.getName() + " : " + String.valueOf( price );
+            System.out.println( textStr );
+        }
+
+        for( DiscountProduct elemProduct : this.discountlist ) {
             price = elemProduct.getPrice();
             textStr = elemProduct.getName() + " : " + String.valueOf( price );
             discountPercentage = elemProduct.getDiscountPercentage();
@@ -172,7 +172,13 @@ public class ListDiscountProduct {
     }
 
     public DiscountProduct find( String name) {
-        for( DiscountProduct elemProduct : this.list ) {
+        for( Product elemProduct : this.list ) {
+            if( elemProduct.getName().equalsIgnoreCase( name ) ) {
+                return elemProduct;
+            }
+        }
+
+        for( DiscountProduct elemProduct : this.discountlist ) {
             if( elemProduct.getName().equalsIgnoreCase( name ) ) {
                 return elemProduct;
             }
@@ -195,20 +201,23 @@ public class ListDiscountProduct {
     }
 
     @Override
-    public String toString() {
-        return "{" + list + '}';
-    }
-
-    @Override
-    public boolean equals( Object o ) {
-        if ( o == null || getClass() != o.getClass() ) return false;
-        ListDiscountProduct that = ( ListDiscountProduct ) o;
-        return Objects.equals( list , that.list );
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ListDiscountProduct that = (ListDiscountProduct) o;
+        return Objects.equals(discountlist, that.discountlist) && Objects.equals(list, that.list);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode( list );
+        return Objects.hash(discountlist, list);
+    }
+
+    @Override
+    public String toString() {
+        return "ListDiscountProduct{" +
+                "discountlist=" + discountlist +
+                ", list=" + list +
+                '}';
     }
 }
 
