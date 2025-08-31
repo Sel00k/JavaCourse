@@ -76,7 +76,14 @@ public class ListDiscountProduct {
                             state = false;
                         }
 
-                        for( DiscountProduct elemProduct : this.list ) {
+                        for( Product elemProduct : this.list ) {
+                            if( elemProduct.getName().equalsIgnoreCase( nameProduct ) ) {
+                                System.out.println( "Имя должно быть уникально, в списке \"" + nameProduct + "\" уже есть" );
+                                state = false;
+                            }
+                        }
+
+                        for( DiscountProduct elemProduct : this.discountlist ) {
                             if( elemProduct.getName().equalsIgnoreCase( nameProduct ) ) {
                                 System.out.println( "Имя должно быть уникально, в списке \"" + nameProduct + "\" уже есть" );
                                 state = false;
@@ -171,13 +178,16 @@ public class ListDiscountProduct {
         System.out.println( "" );
     }
 
-    public DiscountProduct find( String name) {
+    public Product findProduct( String name) {
         for( Product elemProduct : this.list ) {
             if( elemProduct.getName().equalsIgnoreCase( name ) ) {
                 return elemProduct;
             }
         }
+        return null;
+    }
 
+    public DiscountProduct findDiscountProduct( String name) {
         for( DiscountProduct elemProduct : this.discountlist ) {
             if( elemProduct.getName().equalsIgnoreCase( name ) ) {
                 return elemProduct;

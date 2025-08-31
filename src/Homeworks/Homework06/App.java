@@ -36,7 +36,8 @@ public class App {
     private static void acquisition( ListBuyer bayers , ListDiscountProduct products ) {
         String endCommand = "END";
         Scanner scanner = new Scanner( System.in );
-        DiscountProduct p;
+        Product p1;
+        DiscountProduct p2;
         String strPurchase , nameBayer , nameProduct;
         String[] x;
 
@@ -59,12 +60,17 @@ public class App {
             if ( x.length == 2 ) {
                 nameBayer = x[0].trim();
                 nameProduct = x[1].trim();
-                p = products.find( nameProduct );
+                p1 = products.findProduct( nameProduct );
+                p2 = products.findDiscountProduct( nameProduct );
 
-                if( p != null ) {
-                    bayers.purchase( nameBayer , p );
+                if( p1 != null ) {
+                    bayers.purchase( nameBayer , p1 );
                 } else {
-                    System.out.println("Продукт с именем \"" + nameProduct + "\" не найден" );
+                    if( p2 != null ) {
+                        bayers.purchase( nameBayer , p2 );
+                    } else {
+                        System.out.println("Продукт с именем \"" + nameProduct + "\" не найден" );
+                    }
                 }
             } else {
                 System.out.println( "\"" + strPurchase + "\" : не удалось расшифровать" );

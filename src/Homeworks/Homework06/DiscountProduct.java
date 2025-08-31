@@ -2,6 +2,7 @@ package Homeworks.Homework06;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
 public class DiscountProduct extends Product {
     /* Продукт поддерживающий скидки */
@@ -68,5 +69,23 @@ public class DiscountProduct extends Product {
 
     public void setDiscountEndDate( LocalDate discountEndDate ) {
         this.discountEndDate = discountEndDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        DiscountProduct that = (DiscountProduct) o;
+        return discountPercentage == that.discountPercentage && Objects.equals(discountStartDate, that.discountStartDate) && Objects.equals(discountEndDate, that.discountEndDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), discountPercentage, discountStartDate, discountEndDate);
+    }
+
+    @Override
+    public String toString() {
+        return super.getName();
     }
 }

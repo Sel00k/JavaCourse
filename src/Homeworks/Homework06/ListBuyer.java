@@ -111,6 +111,23 @@ public class ListBuyer{
         System.out.println( "" );
     }
 
+    public boolean purchase( String nameBuyer , Product newProduct ) {
+        for( Buyer elemBuyer : this.list ) {
+            if( elemBuyer.getName().equalsIgnoreCase( nameBuyer ) ) {
+                if( elemBuyer.purchase( newProduct , marketDate ) ) {
+                    System.out.println( "\"" + nameBuyer + "\" купил(a) \"" + newProduct.getName() + "\"" );
+                    return true;
+                } else {
+                    System.out.println( "\"" + nameBuyer + "\" не может позволить себе \"" + newProduct.getName() + "\"" );
+                    return false;
+                }
+            }
+        }
+
+        System.out.println( "Покупателя с именем \"" + nameBuyer + "\" не найдено" );
+        return false;
+    }
+
     public boolean purchase( String nameBuyer , DiscountProduct newProduct ) {
         for( Buyer elemBuyer : this.list ) {
             if( elemBuyer.getName().equalsIgnoreCase( nameBuyer ) ) {

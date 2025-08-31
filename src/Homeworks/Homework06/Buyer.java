@@ -7,13 +7,15 @@ import java.util.Objects;
 class Buyer {
     private String name;
     private int wallet;
-    private ArrayList<DiscountProduct> listProducts;
+    private ArrayList<Product> listProducts;
+    private ArrayList<DiscountProduct> listDiscountProducts;
 
     // Конструктор по умолчанию
     public Buyer() {
         this.name = "Noname";
         this.wallet = 0;
         this.listProducts = new ArrayList<>();
+        this.listDiscountProducts = new ArrayList<>();
     }
 
     // Конструктор только с именем
@@ -21,6 +23,19 @@ class Buyer {
         this.name = name;
         this.wallet = wallet;
         this.listProducts = new ArrayList<>();
+        this.listDiscountProducts = new ArrayList<>();
+    }
+
+    public boolean purchase( Product newProduct , LocalDate marketDate ) {
+        int price = newProduct.getPrice();
+
+        if( this.wallet >= price ) {
+            this.listProducts.add( newProduct );
+            this.wallet -= price;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean purchase( DiscountProduct newProduct , LocalDate marketDate ) {
@@ -42,7 +57,7 @@ class Buyer {
         }
 
         if( this.wallet >= price ) {
-            this.listProducts.add( newProduct );
+            this.listDiscountProducts.add( newProduct );
             this.wallet -= price;
             return true;
         } else {
@@ -78,10 +93,14 @@ class Buyer {
         ArrayList<String> ProductNames = new ArrayList<>();
         String str = name + " - ";
 
-        if( listProducts.size() == 0 ) {
+        if( ( listDiscountProducts.size() + listProducts.size() ) == 0 ) {
             str += "Ничего не куплено";
         } else {
-            for( DiscountProduct elemProduct : listProducts ) {
+            for( Product elemProduct : listProducts ) {
+                ProductNames.add( elemProduct.toString() );
+            }
+
+            for( DiscountProduct elemProduct : listDiscountProducts ) {
                 ProductNames.add( elemProduct.toString() );
             }
 
