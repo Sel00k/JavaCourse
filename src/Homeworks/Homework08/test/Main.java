@@ -15,13 +15,32 @@ package Homeworks.Homework08.test;
       4в) Среднюю стоимость искомой модели modelToFind2
    5. Реализовать ввод и вывод программы в файл *.txt.
    6. Вынести методы работы с автомобилем в папку repository интерфейс
-      CarsRepository и его реализацию CarsRepositoryImpl.
+      CarsRepository и его реализацию CarsRepositoryText.
    7. Доработать программу до следующей структуры
-      * файл с данными по пути от main : ../data/cars.txt
-      * файл с результатами по пути от main : ../data/result.txt
-   8. CarsRepository обеспечивает уникальность номера автомобиля в списке
+      * файл с данными по пути \src\Homeworks\Homework08\data\cars.txt
+      * файл с результатами по пути \src\Homeworks\Homework08\data\result.txt
+   8. CarsRepositoryText обеспечивает уникальность номера автомобиля в списке
 */
 
 
+import Homeworks.Homework08.repository.CarsRepositoryText;
+
 public class Main {
+
+    public static void main( String[] args )
+    {
+        String currentDirectory = System.getProperty( "user.dir" );
+        System.out.println( "Текущая рабочая директория: " + currentDirectory );
+        String fileNameCars   = currentDirectory + "\\src\\Homeworks\\Homework08\\data\\cars.txt";
+        String fileNameResult = currentDirectory + "\\src\\Homeworks\\Homework08\\data\\result.txt";
+
+        CarsRepositoryText carsRepository = new CarsRepositoryText( fileNameCars , fileNameResult );
+
+        carsRepository.writeCars();
+        carsRepository.writeNumbersFromColorAndMileag();
+        carsRepository.writeUniqueCars();
+        carsRepository.writeUniqueModels();
+        carsRepository.writeColorMinPrice();
+        carsRepository.writeAvePriceModel();
+     }
 }

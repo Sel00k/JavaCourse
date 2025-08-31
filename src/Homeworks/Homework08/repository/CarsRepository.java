@@ -1,30 +1,19 @@
 package Homeworks.Homework08.repository;
 
-import Homeworks.Homework08.Automobile;
 
-import java.util.ArrayList;
-import java.util.List;
+public interface CarsRepository {
 
-public class CarsRepository {
+    public void readCars();
 
-    List<Automobile> cars = new ArrayList<>();
-//    String InputFileName;
-//    String OutputFileName;
+    public void writeCars();
 
-    // Создает папку ../data, если нет, и файл cars.txt, если нет
-    public CreateTable() {
-    }
+    public void writeNumbersFromColorAndMileag();
 
-    // Заполняет cars.txt, если пустой
-    public CreateData() {
-    }
+    public void writeUniqueCars();
 
-    // Читает данные о автомобилях из cars.txt
-    public ReadData() {
-    }
+    public void writeUniqueModels();
 
-    // Пишет результат в файл report_<data>.txt
-    public WriteResult() {
-    }
+    public void writeColorMinPrice();
 
+    public void writeAvePriceModel();
 }
