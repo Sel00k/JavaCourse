@@ -1,5 +1,8 @@
 package Homeworks.Homework06;
 
+// Расширить программу из задания с промежуточной аттестации. Добавить механизм наследования.
+// В программе должно быть два класса – один для обычных продуктов – Product, а другой для специальных – DiscountProduct.
+
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
