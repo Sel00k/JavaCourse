@@ -1,0 +1,52 @@
+"C:\Program Files (x86)\Java\jdk-21.0.2\bin\java.exe" "-javaagent:C:\Program Files\OpenIDE\OpenIDE 2024.3.5\lib\idea_rt.jar=57515" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sel00k\OpenideProjects\JavaCourse\out\production\JavaCourse Homeworks.Homework07.Task3
+Вариант с Integer
+
+Set A : [1, 2, 3]
+Set B : [0, 1, 2, 4]
+
+Set   A intersection B : [1, 2]
+SetEx A intersection B : [1, 2]
+
+Set   A union B : [0, 1, 2, 3, 4]
+SetEx A union B : [0, 1, 2, 3, 4]
+
+Set   A relative complement B : [3]
+SetEx A relative complement B : [3]
+
+---------------------------
+
+Вариант с строками
+
+Set A : [Яблоко, Банан, Апельсин]
+Set B : [Виноград, Яблоко, Банан]
+
+Set   A intersection B : [Яблоко, Банан]
+SetEx A intersection B : [Яблоко, Банан]
+
+Set   A union B : [Виноград, Яблоко, Банан, Апельсин]
+SetEx A union B : [Виноград, Яблоко, Банан, Апельсин]
+
+Set   A relative complement B : [Апельсин]
+SetEx A relative complement B : [Апельсин]
+
+---------------------------
+
+Вариант со списком строк
+
+Set A : [[Виноград, Манго, Персик], [Яблоко, Банан, Вишня], [Кокос, Манго]]
+Set B : [[Яблоко, Груша], [Яблоко, Банан, Мандарин], [Яблоко, Банан, Вишня], [Кокос, Манго]]
+
+Set   A intersection B : [[Яблоко, Банан, Вишня], [Кокос, Манго]]
+SetEx A intersection B : [[Яблоко, Банан, Вишня], [Кокос, Манго]]
+
+Set   A union B : [[Яблоко, Груша], [Виноград, Манго, Персик], [Яблоко, Банан, Мандарин], [Яблоко, Банан, Вишня], [Кокос, Манго]]
+SetEx A union B : [[Яблоко, Груша], [Виноград, Манго, Персик], [Яблоко, Банан, Мандарин], [Яблоко, Банан, Вишня], [Кокос, Манго]]
+
+Set   A relative complement B : [[Виноград, Манго, Персик]]
+SetEx A relative complement B : [[Виноград, Манго, Персик]]
+
+---------------------------
+
+
+Процесс завершен с кодом выхода 0
+

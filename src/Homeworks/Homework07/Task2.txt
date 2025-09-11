@@ -1,0 +1,25 @@
+"C:\Program Files (x86)\Java\jdk-21.0.2\bin\java.exe" "-javaagent:C:\Program Files\OpenIDE\OpenIDE 2024.3.5\lib\idea_rt.jar=57467" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sel00k\OpenideProjects\JavaCourse\out\production\JavaCourse Homeworks.Homework07.Task2
+Введите первую строку > Бейсбол
+Введите вторую строку > Героин
+false
+
+Процесс завершен с кодом выхода 0
+
+
+
+"C:\Program Files (x86)\Java\jdk-21.0.2\bin\java.exe" "-javaagent:C:\Program Files\OpenIDE\OpenIDE 2024.3.5\lib\idea_rt.jar=57488" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sel00k\OpenideProjects\JavaCourse\out\production\JavaCourse Homeworks.Homework07.Task2
+Введите первую строку > Бейсбол
+Введите вторую строку > бобслей
+true
+
+Процесс завершен с кодом выхода 0
+
+
+
+"C:\Program Files (x86)\Java\jdk-21.0.2\bin\java.exe" "-javaagent:C:\Program Files\OpenIDE\OpenIDE 2024.3.5\lib\idea_rt.jar=57494" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sel00k\OpenideProjects\JavaCourse\out\production\JavaCourse Homeworks.Homework07.Task2
+Введите первую строку > Бейсбол
+Введите вторую строку > слейбоб
+true
+
+Процесс завершен с кодом выхода 0
+

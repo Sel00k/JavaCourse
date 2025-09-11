@@ -1,0 +1,12 @@
+"C:\Program Files (x86)\Java\jdk-21.0.2\bin\java.exe" "-javaagent:C:\Program Files\OpenIDE\OpenIDE 2024.3.5\lib\idea_rt.jar=57449" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sel00k\OpenideProjects\JavaCourse\out\production\JavaCourse Homeworks.Homework07.Task1
+
+ArrayList со строками : [€блоко, банан, €блоко, апельсин, банан]
+его уникальные элементы (список) : [€блоко, банан, апельсин]
+его уникальные элементы (множество) : [банан, €блоко, апельсин]
+
+ArrayList с Integer : [1, 2, 1, 3, 8, 2, 19, 4]
+его уникальные элементы (список) : [1, 2, 3, 8, 19, 4]
+его уникальные элементы (множество) : [1, 2, 3, 19, 4, 8]
+
+ѕроцесс завершен с кодом выхода 0
+

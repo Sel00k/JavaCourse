@@ -1,0 +1,17 @@
+https://github.com/Sel00k/JavaCourse
+
+Домашнее задание №7, ветка Homework7
+https://github.com/Sel00k/JavaCourse/tree/Homework7
+
+задание №1 
+Task1.java
+Task1.txt
+
+задание №2 
+Task2.java
+Task2.txt
+
+задание №3 
+Task3.java
+PowerfulSet.java
+Task3.txt

@@ -29,27 +29,33 @@ public class Task1 {
         iList.add( 19 );
         iList.add( 4  );
 
-        ArrayList<String>  sUniqueList = UniqueValue1( sList );
-        ArrayList<Integer> iUniqueList = UniqueValue1( iList );
-        Set<String>  sSet = UniqueValue( sList );
-        Set<Integer> iSet = UniqueValue( iList );
+        ArrayList<String>  sUniqueList = UniqueListValue( sList );
+        ArrayList<Integer> iUniqueList = UniqueListValue( iList );
+        Set<String>  sSet = UniqueSetValue( sList );
+        Set<Integer> iSet = UniqueSetValue( iList );
 
         System.out.println( "" );
         System.out.println( "ArrayList со строками : " + sList );
-        System.out.println( "его уникальные элементы : " + sUniqueList );
-        System.out.println( "его уникальные элементы : " + sSet );
+        System.out.println( "его уникальные элементы (список) : " + sUniqueList );
+        System.out.println( "его уникальные элементы (множество) : " + sSet );
 
         System.out.println( "" );
         System.out.println( "ArrayList с Integer : " + iList );
-        System.out.println( "его уникальные элементы : " + iUniqueList );
-        System.out.println( "его уникальные элементы : " + iSet );
+        System.out.println( "его уникальные элементы (список) : " + iUniqueList );
+        System.out.println( "его уникальные элементы (множество) : " + iSet );
     }
 
-    public static <T> ArrayList<T> UniqueValue1( ArrayList<T> t )
+    // Используем то что множества автоматически не содержат повторяющиеся элементы
+    public static <T> Set<T> UniqueSetValue( ArrayList<T> list )
+    {
+        Set<T> u = new HashSet<>( list );
+        return u;
+    }
+
+    // Реализуем в ручную (коллекция может быть ArrayList, Set и даже Map (надо только добавить подсчет встречаемости) )
+    public static <T> ArrayList<T> UniqueListValue( ArrayList<T> t )
     {
         ArrayList<T> u = new ArrayList<>();
-//        Object a;
-//        T a;
 
         for( T a : t ) {
             if( !u.contains( a ) ) {
@@ -57,12 +63,6 @@ public class Task1 {
             }
         }
 
-        return u;
-    }
-
-    public static <T> Set<T> UniqueValue( ArrayList<T> list )
-    {
-        Set<T> u = new HashSet<>( list );
         return u;
     }
 }
