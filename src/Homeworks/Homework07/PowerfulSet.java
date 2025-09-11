@@ -5,7 +5,6 @@ import java.util.Set;
 
 public class PowerfulSet {
 
-
     // возвращает пересечение двух наборов.
     // Пример: set1 = {1, 2, 3}, set2 = {0, 1, 2, 4}. Вернуть {1, 2}
     public <T> Set<T> intersection( Set<T> set1 , Set<T> set2 ) {
@@ -31,6 +30,57 @@ public class PowerfulSet {
     public <T> Set<T> relativeComplement( Set<T> set1 , Set<T> set2 ) {
         Set<T> differenceSet = new HashSet<>( set1 );
         differenceSet.removeAll( set2 ); // Удалит из differenceSet элементы, общие с setB
+        return differenceSet;
+    }
+
+    /*  Альтернативные (Ex) версии этих же методов, если вдруг мы по каким-то причинам
+        мы не можем использовать стандартные операции над множествами */
+
+    // возвращает пересечение двух наборов.
+    // Пример: set1 = {1, 2, 3}, set2 = {0, 1, 2, 4}. Вернуть {1, 2}
+    public <T> Set<T> intersectionEx( Set<T> set1 , Set<T> set2 ) {
+        // Создаем возвращаемое множество пустым
+        Set<T> intersection = new HashSet<>();
+
+        // Перебираем set2. Если в set1 есть такой же элемент, что и в set2, то добавляем его в возвращаемое множество
+        for( T a : set2 ) {
+            if( set1.contains( a ) ) {
+                intersection.add( a );
+            }
+        }
+
+        return intersection;
+    }
+
+    // возвращает объединение двух наборов
+    // Пример: set1 = {1, 2, 3}, set2 = {0, 1, 2, 4}. Вернуть {0, 1, 2, 3, 4}
+    public <T> Set<T> unionEx( Set<T> set1 , Set<T> set2 ) {
+        // Создаем возвращаемое множество и добавляем в него все элементы set1
+        Set<T> unionSet = new HashSet<>( set1 );
+
+        // Перебираем set2. Если в set1 нет такого же элемента, что и в set2, то добавляем его в возвращаемое множество
+        for( T a : set2 ) {
+            if( !set1.contains( a ) ) {
+                unionSet.add( a );
+            }
+        }
+
+        return unionSet;
+    }
+
+    // возвращает элементы первого набора без тех, которые находятся также и во втором наборе.
+    // Пример: set1 = {1, 2, 3}, set2 = {0, 1, 2, 4}. Вернуть {3}
+    public <T> Set<T> relativeComplementEx( Set<T> set1 , Set<T> set2 ) {
+        // Создаем возвращаемое множество пустым
+        Set<T> differenceSet = new HashSet<>();
+
+        // Перебираем set1. Если в set2 нет такого же элемента, что и в set1, то добавляем его в возвращаемое множество
+        for( T a : set1 ) {
+            if( !set2.contains( a ) ) {
+                differenceSet.add( a );
+            }
+        }
+
         return differenceSet;
     }
 }
